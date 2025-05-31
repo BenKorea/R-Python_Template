@@ -5,9 +5,10 @@ author: "BenKorea"
 date: "2025-05-29"
 date-modified: last-modified
 ---
-초기화화
+
 ```{r}
 #| label: setup-logger
+#| include: false
 
 library(futile.logger)
 
@@ -24,6 +25,8 @@ if (SHOW_SETUP_LOG) flog.info("🛠️ setup-logger 초기화 완료")
 
 ```{r}
 #| label: setup-options
+#| include: false
+
 
 options(
   scipen = 999
@@ -35,6 +38,8 @@ if (SHOW_SETUP_LOG) flog.info("⚙️ options 설정 완료")
 
 ```{r}
 #| label: setup-packages
+#| include: false
+
 
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(fs, purrr)
@@ -44,6 +49,8 @@ if (SHOW_SETUP_LOG) flog.info("📦 패키지 로딩 완료")
 
 ```{r}
 #| label: setup-funcs
+#| include: false
+
 
 
 fs::dir_ls("R", glob = "*.R") |> purrr::walk(source)
@@ -53,6 +60,7 @@ if (SHOW_SETUP_LOG) flog.info("📄 사용자 정의 함수 로드 완료")
 
 ```{r}
 #| label: setup-paths
+#| include: false
 
 
 data_dir   <- "data"
@@ -66,6 +74,7 @@ if (SHOW_SETUP_LOG) {
 
 ```{r}
 #| label: setup-seed
+#| include: false
 
 
 set.seed(2025)
@@ -75,6 +84,7 @@ if (SHOW_SETUP_LOG) flog.info("🎲 Seed 설정 완료: 2025")
 
 ```{r}
 #| label: setup-env
+#| include: false
 
 # 환경 변수 예시 (API 키 등)
 # Sys.setenv(MY_API_KEY = "your-key-here")
