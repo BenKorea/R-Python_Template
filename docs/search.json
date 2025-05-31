@@ -5,5 +5,12 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R-Python_Template",
+    "section": "",
+    "text": "초기화화\n\nlibrary(futile.logger)\n\n# 환경변수 기반으로 setup 로그 여부 결정\nshow_setup_log &lt;- tolower(Sys.getenv(\"SHOW_SETUP_LOG\", unset = \"false\")) == \"true\"\n\nflog.threshold(INFO)\n\nNULL\n\nflog.layout(layout.simple)\n\nNULL\n\nassign(\"SHOW_SETUP_LOG\", show_setup_log, envir = .GlobalEnv)\n\nif (SHOW_SETUP_LOG) flog.info(\"🛠️ setup-logger 초기화 완료\")\n\n\noptions(\n  scipen = 999\n  #stringsAsFactors = FALSE\n)\n\nif (SHOW_SETUP_LOG) flog.info(\"⚙️ options 설정 완료\")\n\n\nif (!require(\"pacman\")) install.packages(\"pacman\")\n\nLoading required package: pacman\n\npacman::p_load(fs, purrr)\n\nif (SHOW_SETUP_LOG) flog.info(\"📦 패키지 로딩 완료\")\n\n\nfs::dir_ls(\"R\", glob = \"*.R\") |&gt; purrr::walk(source)\n\nif (SHOW_SETUP_LOG) flog.info(\"📄 사용자 정의 함수 로드 완료\")\n\n\ndata_dir   &lt;- \"data\"\noutput_dir &lt;- \"outputs\"\n\nif (SHOW_SETUP_LOG) {\n  flog.info(\"📁 데이터 경로: %s\", data_dir)\n  flog.info(\"📂 출력 경로: %s\", output_dir)\n}\n\n\nset.seed(2025)\n\nif (SHOW_SETUP_LOG) flog.info(\"🎲 Seed 설정 완료: 2025\")\n\n\n# 환경 변수 예시 (API 키 등)\n# Sys.setenv(MY_API_KEY = \"your-key-here\")"
   }
 ]
