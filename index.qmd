@@ -90,6 +90,14 @@ if (SHOW_SETUP_LOG) flog.info("🎲 Seed 설정 완료: 2025")
 # Sys.setenv(MY_API_KEY = "your-key-here")
 ```
 
+```{r}
+#| label: render-problems
+#| echo: false
+
+source("scripts/r/generate_problem_sheet.R")
+
+```
+
 ```{r the-end}
 
 
