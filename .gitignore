@@ -10,6 +10,7 @@ _freeze/
 /.quarto/
 raw_data/
 renv/
+.Renviron
 
 # Python
 venv/

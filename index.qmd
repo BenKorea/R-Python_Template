@@ -2,7 +2,7 @@
 title: "R-Python_Template"
 description: "R과 Python을 사용하는 프로젝트 용"
 author: "BenKorea"
-date: "2025-05-29"
+date: "2025-06-07"
 date-modified: last-modified
 ---
 
@@ -88,14 +88,6 @@ if (SHOW_SETUP_LOG) flog.info("🎲 Seed 설정 완료: 2025")
 
 # 환경 변수 예시 (API 키 등)
 # Sys.setenv(MY_API_KEY = "your-key-here")
-```
-
-```{r}
-#| label: render-problems
-#| echo: false
-
-source("scripts/r/generate_problem_sheet.R")
-
 ```
 
 ```{r the-end}
